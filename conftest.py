@@ -4,7 +4,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.opera.options import Options as OperaOptions
 
-DRIVERS = os.path.expanduser("~/Downloads/drivers")
+DRIVERS = os.path.expanduser("~/Downloads/soft/drivers")
 
 
 def pytest_addoption(parser):
@@ -23,6 +23,7 @@ def url(request):
 def browser(request):
     _browser = request.config.getoption("--browser")
     headless = request.config.getoption("--headless")
+    # https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities
     maximized = request.config.getoption("--maximized")
 
     driver = None
